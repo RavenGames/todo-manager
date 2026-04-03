@@ -2,6 +2,10 @@
 
 A modern, feature-rich task management application with categories and inline editing.
 
+## 🌐 Live Demo
+
+[View Todo Manager](https://RavenGames.github.io/todo-manager/)
+
 ## 🚀 Features
 
 - **Task Management**: Add, edit, delete, and mark tasks as complete
