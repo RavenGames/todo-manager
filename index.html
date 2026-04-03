@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Todo Manager - Modern task management app with categories, inline editing, and local storage persistence."
+    />
+    <meta
+      name="keywords"
+      content="Todo App, Task Manager, Productivity, Categories, Local Storage"
+    />
+    <meta name="author" content="Emmanuel Wole" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#4a90e2" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Todo Manager - Task Management App" />
+    <meta
+      property="og:description"
+      content="Modern todo app with categories, inline editing, and local storage."
+    />
+    <meta
+      property="og:image"
+      content="https://yourusername.github.io/todo-manager/images/preview.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="Todo Manager - Task Management App"
+    />
+    <meta
+      property="twitter:description"
+      content="Modern todo app with categories, inline editing, and local storage."
+    />
+
+    <title>Todo Manager - Task Management App</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style" />
+    <link rel="preload" href="app.js" as="script" />
+
+    <!-- Optimized Font Awesome loading -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+    </noscript>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="app-header">
+        <div class="header-content">
+          <h1>📝 My Tasks</h1>
+          <button
+            id="themeToggle"
+            class="theme-btn"
+            aria-label="Toggle theme"
+            title="Toggle Dark/Light Mode"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="input-section">
+        <input
+          type="text"
+          id="taskInput"
+          class="task-input"
+          placeholder="Add a new task..."
+          aria-label="New task input"
+        />
+        <select
+          id="categorySelect"
+          class="category-select"
+          aria-label="Select category"
+        >
+          <option value="all">All</option>
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="learning">Learning</option>
+        </select>
+        <button id="addBtn" class="add-btn" aria-label="Add task">
+          <i class="fas fa-plus"></i> Add
+        </button>
+      </div>
+
+      <div class="filter-section">
+        <button class="filter-btn active" data-filter="all">
+          All <span class="count" id="count-all">0</span>
+        </button>
+        <button class="filter-btn" data-filter="active">
+          Active <span class="count" id="count-active">0</span>
+        </button>
+        <button class="filter-btn" data-filter="completed">
+          Completed <span class="count" id="count-completed">0</span>
+        </button>
+      </div>
+
+      <div class="search-clear">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search tasks..."
+          aria-label="Search tasks"
+        />
+        <button
+          id="clearCompleted"
+          class="clear-btn"
+          aria-label="Clear completed tasks"
+        >
+          Clear Completed
+        </button>
+      </div>
+
+      <div id="tasksContainer" class="tasks-container"></div>
+
+      <div id="emptyState" class="empty-state">
+        <i class="fas fa-inbox"></i>
+        <p>No tasks yet. Add one to get started! 🚀</p>
+      </div>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
